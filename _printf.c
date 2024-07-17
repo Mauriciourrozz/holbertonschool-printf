@@ -10,6 +10,7 @@ int _printf(const char *format, ...)
 	va_list args;
 	int index = 0;
 	char *str;
+	int counter;
 
 	va_start(args, format);
 
@@ -22,21 +23,25 @@ int _printf(const char *format, ...)
 			{
 				case 'c':
 					_putchar((char)va_arg(args, int));
+					counter++;
 					break;
 				case 's':
 					str = va_arg(args, char *);
 					write(1, str, _strlen(str));
+					counter++;
 					break;
 				case '%':
 					_putchar('%');
+					counter++;
 					break;
 			}
 		}
 		else
 		{
 			_putchar(format[index]);
+			counter++;
 		}
 		index++;
 	}
-	return (0);
+	return (counter);
 }
