@@ -8,6 +8,7 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 	int index;
+	int j;
 
 	va_start(args, format);
 
@@ -21,11 +22,15 @@ int _printf(const char *format, ...)
 				case 'c':
 					_putchar(va_arg(args, int));
 					break;
-				case 's': //bucle
-					_putchar('j');
-					break;
+				case 's': 
+					for (j = 0; j < format[index]; j++)
+					{
+						_putchar(va_arg(args, int));
+					}
+						break;
+					
 				case '%':
-					_putchar('%');
+					_putchar("\%");
 					break;
 
 			}
