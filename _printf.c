@@ -10,7 +10,7 @@ int _printf(const char *format, ...)
 	va_list args;
 	int index = 0;
 	char *str;
-	int counter;
+	int counter, i;
 
 	va_start(args, format);
 
@@ -27,8 +27,19 @@ int _printf(const char *format, ...)
 					break;
 				case 's':
 					str = va_arg(args, char *);
-					write(1, str, _strlen(str));
-					counter++;
+					if (str == NULL)
+					{
+						write(1, "(null)", 6);
+						counter = counter + 6;
+					}
+					else
+					{
+						for (i = 0; str[i] != '\0'; i++)
+						{
+							_putchar(str[i]);
+							counter++;
+						}
+					}
 					break;
 				case '%':
 					_putchar('%');
