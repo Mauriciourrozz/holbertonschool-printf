@@ -22,7 +22,6 @@ int _printf(const char *format, ...)
 		if (format[index] == '%')
 		{
 			index++;
-			if (format[index] == '%')
 			switch (format[index])
 			{
 				case 'c':
@@ -46,14 +45,18 @@ int _printf(const char *format, ...)
 					}
 					break;
 				case '%':
+					if (format[index] == '\0')
+					{
 						_putchar('%');
 						counter++;
 						break;
+					
 				default:
 						_putchar('%');
 						_putchar(format[index]);
 						counter += 2;
 						break;
+					}
 			}
 		}
 		else
