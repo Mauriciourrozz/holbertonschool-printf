@@ -45,8 +45,6 @@ int _printf(const char *format, ...)
 					}
 					break;
 				case '%':
-					if (format[index] == '\0')
-					{
 						_putchar('%');
 						counter++;
 						break;
@@ -56,7 +54,6 @@ int _printf(const char *format, ...)
 						_putchar(format[index]);
 						counter += 2;
 						break;
-					}
 			}
 		}
 		else
