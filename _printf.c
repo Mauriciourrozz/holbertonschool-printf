@@ -42,17 +42,14 @@ int _printf(const char *format, ...)
 					}
 					break;
 				case '%':
-					if (format[index] == '%')
-					{
 						_putchar('%');
 						counter++;
-					}
-					else
-					{
-						write(1, "(null)", 6);
-						counter = counter + 6;
-					}
-					break;
+						break;
+					default:
+						_putchar('%');
+						_putchar(format[index]);
+						counter = counter + 2;
+						break;
 			}
 		}
 		else
