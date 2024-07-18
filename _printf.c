@@ -12,6 +12,9 @@ int _printf(const char *format, ...)
 	char *str;
 	int counter, i;
 
+	if (format == NULL)
+		return (-1);
+
 	va_start(args, format);
 
 	while (format[index] != '\0')
@@ -59,5 +62,6 @@ int _printf(const char *format, ...)
 		}
 		index++;
 	}
+	va_end(args);
 	return (counter);
 }
