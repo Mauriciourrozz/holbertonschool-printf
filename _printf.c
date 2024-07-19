@@ -22,6 +22,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[index] == '%')
 		{
+			index++;
 			switch (format[index])
 			{
 				case 'c':
