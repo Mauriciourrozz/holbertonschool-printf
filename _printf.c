@@ -52,6 +52,7 @@ int _printf(const char *format, ...)
 						index++;
 						break;
 				case '\0':
+						counter = -1;
 						break;
 				default:
 					_putchar(format[index]);
