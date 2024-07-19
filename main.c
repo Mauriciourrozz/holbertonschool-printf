@@ -34,6 +34,10 @@ int main(void)
 	printf("len = %d\n", len);
     len2 = printf("Percent:[%%]\n");
     printf("len2 = %d\n", len2);
-    
+
+	printf("probando %\n");
+	printf("\n");
+    _printf("%%\n");
+    printf("%%\n");
     return (0);
 }

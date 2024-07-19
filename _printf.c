@@ -54,7 +54,7 @@ int _printf(const char *format, ...)
 				default:
 					_putchar('%');
 					_putchar(format[index]);
-					counter += 2;
+					counter += 1;
 					break;
 			}
 		}
