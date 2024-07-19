@@ -46,16 +46,11 @@ int _printf(const char *format, ...)
 					}
 					break;
 				case '%':
-					if (format[index + 1] == '\0')
-					{
-						break;
-					}
-					else
-					{
 					_putchar('%');
 					counter++;
 					break;
-					}
+				case '\0':
+					break;
 				default:
 					_putchar('%');
 					_putchar(format[index]);
@@ -73,4 +68,3 @@ int _printf(const char *format, ...)
 	va_end(args);
 	return (counter);
 }
-
