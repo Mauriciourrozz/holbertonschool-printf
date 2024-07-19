@@ -56,6 +56,8 @@ int _printf(const char *format, ...)
 						break;
 				default:
 					_putchar(format[index]);
+					index++;
+					_putchar(format[index]);
 					counter += 2;
 					break;
 			}
