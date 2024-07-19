@@ -22,12 +22,12 @@ int _printf(const char *format, ...)
 	{
 		if (format[index] == '%')
 		{
-			index++;
-			switch (format[index])
+			switch (format[index + 1])
 			{
 				case 'c':
-					_putchar((char)va_arg(args, int));
+					_putchar(va_arg(args, int));
 					counter++;
+					index++;
 					break;
 				case 's':
 					str = va_arg(args, char *);
@@ -44,17 +44,19 @@ int _printf(const char *format, ...)
 							counter++;
 						}
 					}
+					index++;
 					break;
 				case '%':
 						_putchar('%');
 						counter++;
+						index++;
 						break;
-					case '\0':
+				case '\0':
 					break;
 				default:
 					_putchar('%');
-					_putchar(format[index]);
 					counter += 2;
+					index++;
 					break;
 			}
 		}
