@@ -1,6 +1,7 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include "main.h"
 /**
  *
@@ -45,21 +46,14 @@ int _printf(const char *format, ...)
 					}
 					break;
 				case '%':
-					if (format[index + 1] == '\0')
-						break;
-					else if (format[index] == '%')
-					{
 					_putchar('%');
 					counter++;
 					break;
-					}
-					else
-					{	
-					 _putchar('%');
-                                        _putchar(format[index]);
-                                        counter += 2;
-                                        break;
-					}
+				default:
+					_putchar('%');
+					_putchar(format[index]);
+					counter += 2;
+					break;
 			}
 		}
 		else
