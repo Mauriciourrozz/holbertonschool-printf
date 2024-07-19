@@ -10,7 +10,7 @@ int _printf(const char *format, ...)
 	va_list args;
 	int index = 0;
 	char *str;
-	int counter, i;
+	int counter = 0,  i;
 
 	if (format == NULL)
 		return (-1);
@@ -45,15 +45,16 @@ int _printf(const char *format, ...)
 					}
 					break;
 				case '%':
+					if (format[index + 1] == '\0')
+					{
+						return (-1);
+					}
+					else
+					{
 						_putchar('%');
 						counter++;
 						break;
-					
-				default:
-						_putchar('%');
-						_putchar(format[index]);
-						counter += 2;
-						break;
+					}
 			}
 		}
 		else
@@ -66,3 +67,4 @@ int _printf(const char *format, ...)
 	va_end(args);
 	return (counter);
 }
+
