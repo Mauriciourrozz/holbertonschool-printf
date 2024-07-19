@@ -54,9 +54,8 @@ int _printf(const char *format, ...)
 				case '\0':
 						break;
 				default:
-					_putchar('%');
+					_putchar(format[index]);
 					counter += 2;
-					index++;
 					break;
 			}
 		}
