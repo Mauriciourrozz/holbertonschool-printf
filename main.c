@@ -29,6 +29,5 @@ int main(void)
     len = _printf("%");
     len2 = printf("%");
 
-    printf("%i, %i\n", len, len2);
 return (0);
 }
