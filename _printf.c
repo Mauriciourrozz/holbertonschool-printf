@@ -51,6 +51,9 @@ int _printf(const char *format, ...)
 						counter++;
 						index++;
 						break;
+				case 'd':
+				case 'i':
+						
 				case '\0':
 						counter = -1;
 						break;
