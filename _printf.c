@@ -40,6 +40,7 @@ int _printf(const char *format, ...)
 				case 'd':
 				case 'i':
 					counter += _print_num(va_arg(args, int));
+						break;
 					break;
 				default:
 					counter = -1;
