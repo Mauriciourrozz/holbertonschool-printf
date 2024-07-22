@@ -42,7 +42,7 @@ int _printf(const char *format, ...)
 					counter += _print_num(va_arg(args, int));
 					break;
 				default:
-					counter += _putchar('%') + _putchar(*format);
+					counter = -1;
 					break;
 			}
 		}
@@ -102,3 +102,5 @@ int _print_num(int n)
 
 	return (d);
 }
+
+
